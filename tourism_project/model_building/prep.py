@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from sklearn.model_selection import train_test_split
 # for converting text data in to numerical representation
 from sklearn.preprocessing import LabelEncoder
