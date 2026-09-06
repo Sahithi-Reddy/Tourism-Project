@@ -29,9 +29,14 @@ for col in categorical_cols:
     if df[col].isnull().sum() > 0:
         df[col].fillna(df[col].mode()[0], inplace=True)
 
-# Handle specific data quality issues (e.g., "Fe Male" should be "Female")
+# Handle specific data quality issues 
+#Replace "Fe Male" with "Female"
 if 'Gender' in df.columns:
     df['Gender'] = df['Gender'].str.strip().replace({'Fe Male': 'Female', 'Fe male': 'Female'})
+
+# Replace Unmarried with Single as they both represent same meaning.
+if 'MaritalStatus' in df.columns:
+    df['MaritalStatus'] = df['MaritalStatus'].str.strip().replace({'Unmarried': 'Single', 'Unmarried': 'Single'})
 
 # Encode categorical columns
 print("\nEncoding categorical variables...")
