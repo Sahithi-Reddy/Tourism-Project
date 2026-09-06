@@ -2,6 +2,7 @@ import os
 import streamlit as st
 import numpy as np
 import joblib
+import pandas as pd
 
 # Page configuration
 st.set_page_config(
