@@ -74,7 +74,7 @@ with col1:
     
     marital_status = st.selectbox(
         "Marital Status",
-        options=["Single", "Married", "Divorced", "Unmarried"]
+        options=["Single", "Married", "Divorced"]
     )
     
     designation = st.selectbox(
